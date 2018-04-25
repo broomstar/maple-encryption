@@ -1,2 +1,2 @@
 extern crate bytes;
-mod aes;
+pub mod aes;
