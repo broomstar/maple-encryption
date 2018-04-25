@@ -1,0 +1,11 @@
+[package]
+name = "maple_encrytion"
+version = "0.1.0"
+authors = ["broomstar <broomstar@163.com>"]
+
+[dependencies]
+bytes = "0.4"
+
+[build-dependencies]
+bindgen = "0.36.0"
+cc = "1.0"
