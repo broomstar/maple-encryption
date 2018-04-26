@@ -31,12 +31,6 @@ const unsigned char IV_TABLE[256] =
 	0x84, 0x7F, 0x61, 0x1E, 0xCF, 0xC5, 0xD1, 0x56, 0x3D, 0xCA, 0xF4, 0x05, 0xC6, 0xE5, 0x08, 0x49
 };
 
-const unsigned char kWzFileKeyIv[4] =
-{
-	0xB9, 0x7D, 0x63, 0xE9
-};
-
-
 unsigned char rotate_right(unsigned char val, unsigned short shifts)
 {
     shifts &= 7;
@@ -121,6 +115,7 @@ void ffi_decrypt(unsigned char *buffer, unsigned char *iv, unsigned short size)
     aes_crypt(buffer, iv, size);
     shuffle_iv(iv);
 
+    /*
     unsigned char a;
     unsigned char b;
     unsigned char c;
@@ -159,10 +154,12 @@ void ffi_decrypt(unsigned char *buffer, unsigned char *iv, unsigned short size)
             buffer[size - temp_size] = c;
         }
     }
+    */
 }
 
 void ffi_encrypt(unsigned char *buffer, unsigned char *iv, unsigned short size)
 {
+    /*
     unsigned char a;
     unsigned char c;
     unsigned short temp_size;
@@ -196,7 +193,7 @@ void ffi_encrypt(unsigned char *buffer, unsigned char *iv, unsigned short size)
             buffer[temp_size - 1] = c;
         }
     }
-
+    */
     aes_crypt(buffer, iv, size);
     shuffle_iv(iv);
 }
