@@ -115,7 +115,7 @@ void ffi_decrypt(unsigned char *buffer, unsigned char *iv, unsigned short size)
     aes_crypt(buffer, iv, size);
     shuffle_iv(iv);
 
-    /*
+    
     unsigned char a;
     unsigned char b;
     unsigned char c;
@@ -154,12 +154,12 @@ void ffi_decrypt(unsigned char *buffer, unsigned char *iv, unsigned short size)
             buffer[size - temp_size] = c;
         }
     }
-    */
+    
 }
 
 void ffi_encrypt(unsigned char *buffer, unsigned char *iv, unsigned short size)
 {
-    /*
+    
     unsigned char a;
     unsigned char c;
     unsigned short temp_size;
@@ -193,7 +193,7 @@ void ffi_encrypt(unsigned char *buffer, unsigned char *iv, unsigned short size)
             buffer[temp_size - 1] = c;
         }
     }
-    */
+    
     aes_crypt(buffer, iv, size);
     shuffle_iv(iv);
 }
